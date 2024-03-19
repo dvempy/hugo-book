@@ -8,10 +8,13 @@
 {{ partial "docs/inject/menu-before" . }}
 {{ partial "docs/menu-hugo" .Site.Menus.before }}
 
+
+{{ if not .Site.Params.HideDocsMenu }}
 {{ if .Site.Params.BookMenuBundle }}
   {{ partial "docs/menu-bundle" . }}
 {{ else }}
   {{ partial "docs/menu-filetree" . }}
+{{ end }}
 {{ end }}
 
 {{ partial "docs/menu-hugo" .Site.Menus.after }}
